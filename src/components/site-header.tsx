@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import svgLogo from "@/assets/SVG Logo.png";
 
 type Tone = "light" | "dark";
 
@@ -35,8 +36,11 @@ export function SiteHeader({ tone = "dark" }: { tone?: Tone }) {
         }`}
       >
         <Link to="/" className={`flex items-center gap-2 ${text}`}>
-          <span className="font-sans text-[15px] font-medium tracking-tight">Nakoda Group</span>
-          <span className={`font-sans text-[13px] ${textSoft}`}>· of Companies</span>
+          <img
+            src={svgLogo}
+            alt="Nakoda Group of Companies"
+            className={`h-10 w-auto object-contain transition-all duration-300 ${isLight ? "brightness-0 invert" : ""}`}
+          />
         </Link>
         <ul className={`hidden items-center gap-9 text-[13px] font-medium md:flex ${textSoft}`}>
           <li><Link to="/" className={`transition-colors hover:${text}`}>Home</Link></li>
@@ -62,8 +66,11 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link to="/" className="flex items-center gap-2 text-foreground">
-              <span className="font-sans text-[15px] font-medium tracking-tight">Nakoda Group</span>
-              <span className="font-sans text-[13px] text-muted-foreground">· of Companies</span>
+              <img
+                src={svgLogo}
+                alt="Nakoda Group of Companies"
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
               Leading manufacturer &amp; exporter of copper &amp; copper alloy products since 1978. SVG Metals Pvt Ltd · PBJ Industries · Nakoda Copper Tubes.
